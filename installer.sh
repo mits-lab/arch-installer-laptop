@@ -300,7 +300,7 @@ systemctl enable cups.service
 # enable TLP - for laptop power management
 systemctl enable tlp.service
 # Pull configuration script
-git clone "$_gitrepo" "$_localscriptdir" >/dev/null 2>&1
+curl https://raw.githubusercontent.com/mits-lab/arch-configure-laptop/main/configure.sh > /root/configure.sh && chmod u+x /root/configure.sh >/dev/null 2>&1
 EOF
 
 echo -n -e ".$cyan Complete$normal \n"
