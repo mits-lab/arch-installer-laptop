@@ -81,7 +81,7 @@ _domain=$(echo "$HOSTNAME" | cut -f2-3 -d.)
 _ipaddress=$(curl -s https://ipinfo.io/ip)
 _urltest=google.ca
 _localscriptdir=/root/
-_gitrepo=https://github.com/mits-lab/Arch-Tools.git
+_gitrepo=https://github.com/mits-lab/arch-configure-laptop.git
 
 ### Ensure critical variables above are filled out.
 
