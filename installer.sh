@@ -240,7 +240,7 @@ echo -n -e ".$cyan Complete$normal \n"
 
 echo -n -e "\nGenerating the fstab.."
 
-genfstab -U /mnt >> /mnt/etc/fstab >/dev/null 2>&1
+genfstab -U /mnt >> /mnt/etc/fstab
 
 echo -n -e ".$cyan Complete$normal \n"
 
