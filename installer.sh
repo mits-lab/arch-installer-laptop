@@ -112,6 +112,19 @@ else
   exit 1
 fi
 
+### offer to shred old drive contents.
+
+echo -n -e "\nAlthough the script itself will automatically purge drive contents, in some rare conditions old EFI/MBR contents may remain.\n"
+echo -n -e "Should the system fail to boot after completing the installation script, please consider shredding the drive contents on subsequent attempts.\n\n"
+
+read -p "Run drive shred now?(y/n) " -n 1 -r
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    echo -n -e "\nShredding drive contents.."
+    shred -v -n1 /dev/nvme0n1 >/dev/null 2>&1
+    echo -n -e ".$cyan Complete$normal \n"
+fi
+
 ### Prevent Script from running a second time.
 
 if [ -e /root/.stop_run ]
