@@ -120,7 +120,9 @@ echo -n -e "Should the system fail to boot after completing the installation scr
 read -p "Run drive shred now?(y/n) " -n 1 -r
 if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
-    echo -n -e "\nShredding drive contents.."
+    echo -n -e "\n"
+else
+    echo -n -e "\n\nShredding drive contents.."
     shred -v -n1 /dev/nvme0n1 >/dev/null 2>&1
     echo -n -e ".$cyan Complete$normal \n"
 fi
